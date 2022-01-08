@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet", type"text/css", href="{{ url_for('static', filename='style.css') }}", media="screen" />
+    <!-- Imports  -->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Dioclecian alpha</title>
+  </head>
+  <body>
+    <div id="wrapper">
+	    <div class="content-area">
+    	<h1>Hello internet :)</h1>
+	    <div class="container-fluid">
+	    <div class="main">
+		    <div class="row mt-4">
+		    <div class="box">
+    <canvas id="chartT24" width="1200" height="300"></canvas>
+    <script>
+	    var ctx = document.getElementById("chartT24").getContext("2d");
+	    var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ labelsT24 | safe }},
+        datasets: [{
+            label: 'temperature',
+		fill: true,
+		backgroundColor: 'rgb(182,0,7,0.3)',
+		pointRadius: .5,
+            data: {{ valuesT24 | safe }},
+            borderWidth: 1
+        }]
+    },
+    options: {
+	    responsive: false,
+	    plugins: {
+		title: {
+			display: true,
+			text: "Temperature sensor readings - last 24 hours",
+			align: 'start'
+		},
+	    },
+	    scales: {
+		x: {
+		title: {
+			display: true,
+			text: "Time [DD.MM.YY + time of day]"
+		}
+		},
+		y: {
+		title: {
+			display: true,
+			text: "Temperature [Celcius]"
+		}
+		},
+	    }
+    },
+});
+    </script>
+		    <div class="box">
+    <canvas id="chartT" width="1200" height="300"></canvas>
+    <script>
+	    var ctx = document.getElementById("chartT").getContext("2d");
+	    var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ labelsT | safe }},
+        datasets: [{
+            label: 'temperature',
+		fill: true,
+		backgroundColor: 'rgb(182,0,7,0.3)',
+		pointRadius: .5,
+            data: {{ valuesT | safe }},
+            borderWidth: 1
+        }]
+    },
+    options: {
+	    responsive: false,
+	    plugins: {
+		title: {
+			display: true,
+			text: "Temperature sensor reading",
+			align: 'start'
+		}
+	    },
+	    scales: {
+		x: {
+		title: {
+			display: true,
+			text: "Time [DD.MM.YY + time of day]"
+		}
+		},
+		y: {
+		title: {
+			display: true,
+			text: "Temperature [Celcius]"
+		}
+		},
+	    }
+    },
+});
+    </script>
+    </div>
+		    <div class="box">
+    <canvas id="chartP" width="1200" height="300"></canvas>
+    <script>
+	    var ctx = document.getElementById("chartP").getContext("2d");
+	    var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: {{ labelsP | safe }},
+        datasets: [{
+            label: 'pressure',
+		borderColor: 'rgb(7,0,182,0.3)',
+		backgroundColor: 'rgb(7,0,182,0.3)',
+            data: {{ valuesP | safe }},
+            borderWidth: 1
+        }]
+    },
+    options: {
+	    responsive: false,
+	    plugins: {
+		title: {
+			display: true,
+			text: "Pressure sensor reading",
+			align: 'start'
+		}
+	    },
+	    scales: {
+		x: {
+		title: {
+			display: true,
+			text: "Time [DD.MM.YY + time of day]"
+		}
+		},
+		y: {
+		title: {
+			display: true,
+			text: "Pressure [hPa]"
+		}
+		},
+	    }
+    },
+});
+    </script>
+    </div>
+    </div>
+    </div>
+    		</div>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>
+ 
