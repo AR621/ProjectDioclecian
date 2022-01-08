@@ -6,5 +6,3 @@ def readPin(datapin):
     GPIO.setup(datapin, GPIO.IN)
     state = GPIO.input(datapin)
     return state
-
-print(readPin(21))

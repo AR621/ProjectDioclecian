@@ -2,6 +2,12 @@
 # allows u for easy configuration of things like names for csv files etc.
 
 PATH="/home/pi/Dioclecian/"
+
+SENSOR_SCRIPT_NAME = "dioclecian.py"
+SERVER_SCRIPT_NAME = "dioclecianServer.py"
+LOG_NAME = "nohup.out"
+
+
 # Humidity config
 NUM_OF_POTS=2 # number of soil humidity sensors connected
 DATA_CHANNELS = [21, 20] # List containing GPIO corresponding do status from 

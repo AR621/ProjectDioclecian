@@ -5,6 +5,7 @@ import bme280 # handles air pressure and temperature sensor
 import config as cfg
 import csv
 import RPi.GPIO as GPIO
+import os
 
 # Functions
 def logData(datafile, time, data):
@@ -27,8 +28,12 @@ print("Sensor", chip_id, "version", chip_version, "responsible fo temperature he
 # Used as a countermeasure in case first data from sensor is garbled
 # which was the case with my sensor
 
+os.system("python3 " + cfg.SERVER_SCRIPT_NAME)
+print("Dioclecian: server initialized")
+
 #   SENSOR LOOP
 while(1):
+    # server check
     # Time trackers
     timeNow = time.strftime("%d.%m.%y %H:%M", time.localtime())  
     secondsNow = time.strftime("%S",time.localtime())
