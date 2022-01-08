@@ -1,7 +1,7 @@
 # THIS IS A CONFIG FILE
 # allows u for easy configuration of things like names for csv files etc.
 
-PATH="/home/pi/Dioclecian/"
+PATH="/home/pi/ProjectDioclecian/"
 
 SENSOR_SCRIPT_NAME = "dioclecian.py"
 SERVER_SCRIPT_NAME = "dioclecianServer.py"

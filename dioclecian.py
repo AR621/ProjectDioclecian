@@ -28,7 +28,7 @@ print("Sensor", chip_id, "version", chip_version, "responsible fo temperature he
 # Used as a countermeasure in case first data from sensor is garbled
 # which was the case with my sensor
 
-os.system("python3 " + cfg.SERVER_SCRIPT_NAME)
+os.system("nohup python3 " + cfg.SERVER_SCRIPT_NAME + " & > serverLog.out")
 print("Dioclecian: server initialized")
 
 #   SENSOR LOOP
