@@ -6,9 +6,12 @@ This is a project I made that allows you to read data from several sensors on yo
 
 ## Usage
 The project should work out of the box on Raspberry Pi Zero assuming you connect it same way as I did, in case of other Pi's you will need to modify pin numbers in config.py
-Once all is setup you can easly run the whole project by running dioclecian.py script which should initialize all other scripts by itself
+Once all is setup you can easly run the whole project by running dioclecian.py script which should initialize all other scripts by itself.
+
 Command i suggest to run the project:
+````
 nohup python3 dioclecian.py &
+````
 That way you can easly have it run in the background evem when you log out of your Pi, it will also log it's standard console output to nohup.out which may be useful for debugging.
 
 
