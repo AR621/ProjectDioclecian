@@ -4,8 +4,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="refresh" content="60">
 
     <link rel="stylesheet", type"text/css", href="{{ url_for('static', filename='style.css') }}", media="screen" />
+	<link rel = "icon" href="{{ url_for('static', filename='dioclecian.jpg') }}", type = "image/x-icon">
     <!-- Imports  -->
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -14,11 +16,16 @@
   <body>
     <div id="wrapper">
 	    <div class="content-area">
-    	<h1>Hello internet :)</h1>
+    	<h1>Project dioclecian - your garden raport</h1>
 	    <div class="container-fluid">
 	    <div class="main">
 		    <div class="row mt-4">
 		    <div class="box">
+			    <h2>Plantpot's status:</h2>
+			    <h3>
+			    {{ potInfo }}
+			    </h3>
+			    <h2>Sensor readings:</h2>
     <canvas id="chartT24" width="1200" height="300"></canvas>
     <script>
 	    var ctx = document.getElementById("chartT24").getContext("2d");

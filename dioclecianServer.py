@@ -28,18 +28,18 @@ def index():
     labelsT = loadData(cfg.PATH + cfg.TEMPERATURE,0,0)
     valuesT = loadData(cfg.PATH + cfg.TEMPERATURE,1,1)
     #pin data
-    potList = []
+    potInfoString = "" # displays nothing when no pots are configured in config.py
+    potCount = 1
     for datapin in cfg.DATA_CHANNELS:
-        potList.append(pin.readPin(datapin))
-        print("jd")
+        if (pin.readPin(datapin)):
+            potInfoString = potInfoString + "pot " + str(potCount) + " needs watering!\n"            
+        else:
+            potInfoString = potInfoString + "pot " + str(potCount) + " has water.\n"            
+            potCount+=1
 
-    return render_template("index.html", labelsP=labelsP, valuesP=valuesP, labelsT=labelsT, valuesT=valuesT, labelsT24=labelsT[-1440*cfg.SHORT_CHART:], valuesT24=valuesT[-1440*cfg.SHORT_CHART:])
-
-@app.route('/jd')
-def jd():
-    return "JD!"
+    return render_template("index.html", labelsP=labelsP, valuesP=valuesP, labelsT=labelsT, valuesT=valuesT, labelsT24=labelsT[-1440*cfg.SHORT_CHART:], valuesT24=valuesT[-1440*cfg.SHORT_CHART:], potInfo=potInfoString)
 
 # Run the server
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=False, host='0.0.0.0')
 
