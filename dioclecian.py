@@ -6,6 +6,7 @@ import config as cfg
 import csv
 import RPi.GPIO as GPIO
 import os
+import deleteOldData as dataWipe
 
 # Functions
 def logData(datafile, time, data):
@@ -38,6 +39,7 @@ while(1):
     timeNow = time.strftime("%d.%m.%y %H:%M", time.localtime())  
     secondsNow = time.strftime("%S",time.localtime())
     minutesNow = time.strftime("%M",time.localtime())
+    hoursNow = time.strftime("%H",time.localtime())
     # Main measurment code
     if (secondsNow=="00"): # Every minute
         # pot humidity
@@ -50,6 +52,9 @@ while(1):
             # pressure
             print(timeNow,"; Pressure logged:", prs)
             logData(cfg.PRESSURE, timeNow, prs)
+        if(minutesNow == "00" or hoursNow == "00"):
+           dataWipe.cleanData(cfg.TEMPERATURE) 
+           dataWipe.cleanData(cfg.PRESSURE) 
     time.sleep(1)
 exit(-1)
 
