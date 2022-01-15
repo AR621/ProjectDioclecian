@@ -9,8 +9,8 @@ LOG_NAME = "nohup.out"
 
 
 # Humidity config
-NUM_OF_POTS=2 # number of soil humidity sensors connected
-DATA_CHANNELS = [21, 20] # List containing GPIO corresponding do status from 
+NUM_OF_POTS=5 # number of soil humidity sensors connected
+DATA_CHANNELS = [21, 20, 16, 19, 26] # List containing GPIO corresponding do status from 
 # soil humidity sensor ## MAKE SURE IT HAS SAME LENGTH AS THE VALUE OF NUM_OF_POTS!
 
 # Chart settings TODO

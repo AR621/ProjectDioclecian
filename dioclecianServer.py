@@ -35,9 +35,9 @@ def index():
             potInfoString = potInfoString + "pot " + str(potCount) + " needs watering!\n"            
         else:
             potInfoString = potInfoString + "pot " + str(potCount) + " has water.\n"            
-            potCount+=1
+        potCount+=1
 
-    return render_template("index.html", labelsP=labelsP, valuesP=valuesP, labelsT=labelsT, valuesT=valuesT, labelsT24=labelsT[-1440*cfg.SHORT_CHART:], valuesT24=valuesT[-1440*cfg.SHORT_CHART:], potInfo=potInfoString)
+    return render_template("index.html", labelsP=labelsP[-1440*cfg.LONG_CHART:], valuesP=valuesP[-1440*cfg.LONG_CHART:], labelsT=labelsT[-1440*cfg.LONG_CHART:], valuesT=valuesT[-1440*cfg.LONG_CHART:], labelsT24=labelsT[-1440*cfg.SHORT_CHART:], valuesT24=valuesT[-1440*cfg.SHORT_CHART:], potInfo=potInfoString)
 
 # Run the server
 if __name__ == '__main__':
