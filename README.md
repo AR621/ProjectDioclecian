@@ -19,4 +19,4 @@ Feel free to use this project, modify it to your needs and write any suggestions
 ## Webpage
 Here is an screenshot showing how the webpage that displays the data looks:
 ![webpage example image](
-/ProjectDioclecian/webpage_example.png?raw=true  "webpage example")
+https://github.com/AR621/ProjectDioclecian/blob/main/webpage_example.png?raw=true  "webpage example")
