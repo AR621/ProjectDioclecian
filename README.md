@@ -16,3 +16,6 @@ That way you can easly have it run in the background evem when you log out of yo
 
 
 Feel free to use this project, modify it to your needs and write any suggestions.
+## Webpage
+Here is an screenshot showing how the webpage that displays the data looks:
+![webpage example image](url "webpage_example.png")
