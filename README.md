@@ -2,8 +2,8 @@
 Raspberry Pi garden assistant
 
 <p>
-  <img src="https://github.com/AR621/ProjectDioclecian/blob/main/showcase/garden.jpg?raw=true" height="350" />
-  <img src="https://github.com/AR621/ProjectDioclecian/blob/main/showcase/pi.jpg?raw=true" height="350" />
+  <img src="https://github.com/AR621/ProjectDioclecian/blob/main/showcase/garden.jpg?raw=true" height="250" />
+  <img src="https://github.com/AR621/ProjectDioclecian/blob/main/showcase/pi.jpg?raw=true" height="250" />
 </p>
 
 ## Description
